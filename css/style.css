@@ -549,6 +549,37 @@ option{background:#fff;color:var(--ink)}
 }
 @media(hover:hover) and (min-width:901px){.nav-menu li:hover>.sub-menu{display:block}}
 
+/* ===== Типи новин (модулі сторінки новини) ===== */
+.nhead{margin:4px 0 10px}.nmeta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.ntype{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#fff;padding:3px 10px;border-radius:12px;font-weight:500}
+.nt-orange{background:#ee6a36}.nt-blue{background:#2f64d9}.nt-teal{background:#0ea5c9}.nt-purple{background:#a21ce8}.nt-green{background:#6b9424}.nt-gold{background:#c8b514;color:#1f2a14}.nt-cyan{background:#13bfe6;color:#06303a}
+.nmod{margin:0 0 22px}.nmod h2{font:700 22px/1.3 Roboto,sans-serif;margin:26px 0 10px}
+.nmod.card{margin-bottom:14px}.nf{padding:8px 0;border-bottom:1px solid var(--line)}.nf:last-child{border:0}.nf small{display:block;color:var(--mut)}
+.nm-documents .doc{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.nm-contacts p,.nm-related .nl{margin:6px 0 0;color:var(--mut)}.nm-related .nl a{display:block;padding:8px 0;border-bottom:1px solid var(--line)}
+.evbar{display:flex;gap:20px;align-items:center;background:var(--gt);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin:14px 0 8px;flex-wrap:wrap}
+.evd{background:var(--b);color:#fff;border-radius:8px;padding:10px 16px;text-align:center;min-width:84px}.evd b{display:block;font-size:24px;line-height:1.1}.evd span{font-size:12px;text-transform:uppercase}
+.evf{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;flex:1;min-width:220px}.evf>div{min-width:0}.evf b,.evbar b{white-space:normal;overflow-wrap:anywhere;word-break:break-word}.evbar{max-width:100%}.evf small{color:var(--mut);display:block;font-size:12px}
+.ntl{list-style:none;padding:0;margin:0;border-left:3px solid var(--g)}.ntl li{display:flex;gap:16px;padding:0 0 18px 20px;position:relative}.ntl li::before{content:"";position:absolute;left:-10px;top:4px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--g)}
+.ntd{flex:none;min-width:72px;font-weight:700;color:var(--gd)}.ntl p{margin:2px 0 0;color:var(--mut)}
+.nsteps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.nmod,.ntl,.nsteps li,.ntl li>div{min-width:0;max-width:100%}.nsteps li{overflow-wrap:anywhere}.nsteps li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px 14px 58px;position:relative}
+.nsteps li::before{content:counter(s);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--g);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}.nsteps p{margin:2px 0 0;color:var(--mut)}
+.ngal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.nph{background:#5d8a31;color:rgba(255,255,255,.8);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:13px}
+.nhero{margin:8px 0 14px}.nhero .nph{width:100%}
+.nquote blockquote{margin:0;padding:18px 22px;border-left:4px solid var(--o);background:#fff7f2;font-size:18px;font-style:italic}.nquote cite{display:block;margin-top:8px;color:var(--mut);font-style:normal}
+.ncta{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--g);color:#fff;border-radius:8px;padding:20px 24px}.ncta .btn{background:#fff;color:var(--gd)}
+.nper{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;background:var(--gt);border-radius:10px;padding:20px;margin:16px 0}.nper h2{margin:8px 0 4px}.nper p{margin:0;color:var(--mut)}
+.nissue{background:linear-gradient(135deg,#2f64d9,#0f2a6b);color:#fff;border-radius:10px;padding:22px 24px}.nissue h2{color:#fff;margin:6px 0}.nissue p{margin:0 0 8px;opacity:.85}
+.nmod.key{margin:18px 0}.ntags{margin:8px 0}.nm-share{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:20px 0}
+.nm-post-navigation{margin-top:26px}.nc .ntype{margin-bottom:6px}
+@media(max-width:600px){.evbar{padding:14px;gap:12px}.evbar>*{min-width:0!important;width:100%;max-width:100%}.evbar .btn{text-align:center}.ngal{grid-template-columns:repeat(2,minmax(0,1fr))}.nper{grid-template-columns:1fr}.nper .nph{max-width:200px}.evbar{flex-direction:column;align-items:stretch}.ncta{flex-direction:column;align-items:flex-start}.ntl li{flex-direction:column;gap:2px}}
+
+.nzig{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;margin:0 0 20px}.nzig.rev>:first-child{order:2}.nzig h3{margin:0 0 6px}.nzig p{margin:0;color:var(--mut)}
+.nbook .pact{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.nbook h2{font-size:20px}
+.nm-speaker.nper{grid-template-columns:120px 1fr}.nm-speaker small{color:var(--mut)}
+.ntg{align-items:start}.ntc{display:flex;flex-direction:column;gap:6px}.ntc h4{margin:10px 0 2px}.ntc p{margin:4px 0}.nmods code{display:inline-block;background:var(--gt);color:var(--gd);border-radius:4px;padding:2px 8px;margin:0 6px 6px 0;font-size:12.5px}.ntc .btn{align-self:flex-start;margin-top:10px}.ntc li{margin-bottom:4px}
+@media(max-width:600px){.nzig{grid-template-columns:1fr}.nzig.rev>:first-child{order:0}.nm-speaker.nper{grid-template-columns:90px 1fr}}
+
 /* ===== 3. Службові класи WordPress ===== */
 .screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important}
 .skip-link:focus{clip:auto;clip-path:none;height:auto;width:auto;margin:0;left:8px;top:8px;z-index:100000;background:#fff;color:var(--ink);padding:10px 16px;border-radius:4px;box-shadow:0 2px 10px rgba(0,0,0,.3)}
