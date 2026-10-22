@@ -227,7 +227,7 @@
 
   /* ---------- 9. Повні ряди карток: [data-fill] ----------
      Стрічки карток (видання, новини) завжди заповнюють ряд: зайві картки в кінці ховаються
-     залежно від кількості колонок на поточній ширині. Не застосовувати до контенту, який не можна ховати. */
+     залежно від кількості колонок на поточній ширині; [data-rows="1"] обмежує блок одним рядом (так на головній). Не застосовувати до контенту, який не можна ховати. */
   function initFill() {
     var boxes = $$('[data-fill]');
     if (!boxes.length) return;
@@ -240,7 +240,9 @@
         var vis = kids.filter(function (k) { return getComputedStyle(k).display !== 'none' && !k.hidden; });
         if (vis.length && vis.length <= cols) { g.style.gridTemplateColumns = 'repeat(' + vis.length + ', minmax(0, 1fr))'; return; }
         if (cols < 2) return;
+        var rows = parseInt(g.getAttribute('data-rows'), 10);
         var keep = Math.floor(vis.length / cols) * cols;
+        if (rows > 0) keep = Math.min(keep, rows * cols);
         vis.slice(keep).forEach(function (k) { k.setAttribute('data-fill-hide', ''); });
       });
     }
