@@ -653,3 +653,7 @@ h1{overflow-wrap:anywhere}
 @media(max-width:400px){.jc{grid-template-columns:72px minmax(0,1fr);gap:10px}.jc .jcv{width:72px;height:auto;aspect-ratio:3/4}.jc .lk{white-space:normal}}
 @media(max-width:360px){.hd b{font-size:12.5px}}
 @media print{.top,.main-navigation,footer,.hs{display:none}}
+.bkg-fill{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:1499px){.bkg-fill{grid-template-columns:repeat(4,minmax(0,1fr))}.bkg-fill>:nth-child(n+9){display:none}}
+@media(max-width:999px){.bkg-fill{grid-template-columns:repeat(3,minmax(0,1fr))}.bkg-fill>:nth-child(9){display:flex}.bkg-fill>:nth-child(n+10){display:none}}
+@media(max-width:699px){.bkg-fill{grid-template-columns:repeat(2,minmax(0,1fr))}.bkg-fill>:nth-child(n+7){display:none}}
