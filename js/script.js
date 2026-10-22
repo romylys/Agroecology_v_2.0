@@ -252,9 +252,12 @@
 
 
   function initRelief() {
-    var host = document.querySelector('#masthead'); if (!host || host.querySelector('canvas.relief')) return;
-    var c = document.createElement('canvas'); c.className = 'relief'; c.setAttribute('aria-hidden', 'true');
-    host.classList.add('hero-relief'); host.insertBefore(c, host.firstChild);
+    $$('#masthead, .ah-hero').forEach(relief);
+  }
+  function relief(host) {
+    var c = host.querySelector('canvas.relief');
+    if (!c) { c = document.createElement('canvas'); c.className = 'relief'; host.insertBefore(c, host.firstChild); }
+    c.setAttribute('aria-hidden', 'true'); host.classList.add('hero-relief');
     var ctx = c.getContext('2d'), t0 = 0, reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
     function f(x, y, t) { return Math.sin(x * .006 + t) * 1.1 + Math.sin(y * .009 - t * .6) * .9 + Math.sin((x + y) * .004 + 1.3) * 1.3 + Math.sin((x - y) * .007 + t * .4) * .6; }
     function draw(t) {

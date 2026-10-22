@@ -2,7 +2,7 @@
 Theme Name: Agroeco 2.0
 Theme URI: https://agroeco.org.ua
 Author: Інститут агроекології і природокористування НААН
-Description: Макет теми для WordPress — Інститут агроекології і природокористування НААН. Дизайн «Польовий атлас» (Alegreya, IBM Plex, палітра ґрунту й поля), адаптивна верстка.
+Description: Макет теми для WordPress — Інститут агроекології і природокористування НААН. Світла тема, корпоративні кольори, адаптивна верстка.
 Version: 2.0.0
 Text Domain: agroeco
 */
@@ -721,3 +721,114 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 .qa{color:#fff!important;border-radius:0}.qa small{color:inherit!important;opacity:.9}
 .qa[style*="#B7862A"]{color:#1D2620!important}
+
+/* ===== 6. Головна, варіант 2 («Польовий атлас») ===== */
+.atlas-home{--ink-2:var(--mut);--field:var(--g);--field-soft:var(--gt);--loess:var(--o);--sky:var(--b);--surface:#fff;--sage:#DCE6D8;--s1:.8125rem;--s2:.9375rem;--s3:1.0625rem;--s4:1.375rem;--s5:1.875rem;--s6:clamp(2.25rem,5.2vw,3.75rem);font-size:var(--s3)}
+.atlas-home h2{font-size:var(--s5);margin:0}
+.atlas-home h3{font-size:var(--s3);margin:0}
+.atlas-home p{margin:0}
+.atlas-home a{color:var(--g)}
+.atlas-home section{padding-block:60px;border-bottom:1px solid var(--line)}
+.atlas-home .ah-mono{font-family:var(--f-data);font-size:var(--s1);letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.atlas-home .ah-label{font-family:var(--f-data);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--mut)}
+.atlas-home .ah-more{font-family:var(--f-data);font-size:var(--s1);text-decoration:none;white-space:nowrap}
+.atlas-home .ah-more:hover{text-decoration:underline}
+.atlas-home .ah-sh{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:0 0 28px;flex-wrap:wrap;font:inherit}
+.atlas-home .ah-sh p{color:var(--mut);max-width:62ch;margin-top:6px;font-size:var(--s2)}
+.atlas-home .ah-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);display:block;padding:0}
+.atlas-home .ah-hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.atlas-home .ah-hero .w{position:relative;padding-block:60px 52px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;align-items:end}
+.atlas-home .ah-coords{display:flex;flex-wrap:wrap;gap:6px 22px;color:var(--mut);margin-bottom:22px}
+.atlas-home .ah-hero h1{font-size:var(--s6);font-weight:800;max-width:17ch;margin:0}
+.atlas-home .ah-hero .ah-lede{margin-top:20px;max-width:56ch;color:var(--mut)}
+.atlas-home .ah-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.atlas-home .ah-btn{font:600 var(--s2)/1 var(--f-body);padding:13px 20px;text-decoration:none;border:1px solid var(--g);display:inline-flex;border-radius:0}
+.atlas-home .ah-btn.ah-solid{background:var(--g);color:#fff}
+.atlas-home .ah-btn.ah-ghost{background:#fff;color:var(--g)}
+.atlas-home .ah-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.atlas-home .ah-facts div{background:#fff;padding:16px 18px;display:grid;gap:2px}
+.atlas-home .ah-facts b{font-family:var(--f-display);font-size:2.2rem;line-height:1;font-weight:800;color:var(--g)}
+.atlas-home .ah-facts span{font-size:var(--s1);color:var(--mut);line-height:1.35}
+.atlas-home .ah-quick{background:#fff;border-bottom:1px solid var(--line)}
+.atlas-home .ah-quick .w{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.atlas-home .ah-quick a{display:grid;gap:4px;padding:18px 20px;text-decoration:none;color:var(--ink);border-left:1px solid var(--line)}
+.atlas-home .ah-quick a:last-child{border-right:1px solid var(--line)}
+.atlas-home .ah-quick a:hover{background:var(--gt)}
+.atlas-home .ah-quick a b{font-weight:600;font-size:var(--s2)}
+.atlas-home .ah-quick a span{font-size:var(--s1);color:var(--mut)}
+.atlas-home .ah-news{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:36px;margin:0}
+.atlas-home .ah-plate{background:var(--gt);aspect-ratio:16/9;max-width:100%;overflow:hidden;position:relative}
+.atlas-home .ah-plate.ah-sky{background:var(--sky-soft)}
+.atlas-home .ah-plate svg{width:100%;height:100%;display:block}
+.atlas-home .ah-meta{display:flex;gap:12px;flex-wrap:wrap;color:var(--mut);align-items:center}
+.atlas-home .ah-meta .ah-date{color:var(--o);font-weight:500}
+.atlas-home .ah-lead h3{font-size:var(--s5);margin:14px 0 12px}
+.atlas-home .ah-lead h3 a{color:var(--ink);text-decoration:none}
+.atlas-home .ah-lead h3 a:hover{color:var(--g)}
+.atlas-home .ah-lead p{color:var(--mut);font-size:var(--s2);max-width:58ch}
+.atlas-home .ah-feed{display:grid;align-content:start}
+.atlas-home .ah-feed a{display:grid;grid-template-columns:88px minmax(0,1fr);gap:14px;padding:13px 0;border-top:1px solid var(--line);text-decoration:none;color:var(--ink);font-size:var(--s2);line-height:1.4}
+.atlas-home .ah-feed a:last-child{border-bottom:1px solid var(--line)}
+.atlas-home .ah-feed a:hover .t{color:var(--g)}
+.atlas-home .ah-feed .ah-mono{color:var(--o);padding-top:1px}
+.atlas-home .ah-feed .ah-tag{display:block;font-family:var(--f-data);font-size:.72rem;color:var(--mut);margin-top:4px}
+.atlas-home .ah-pubs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.atlas-home .ah-pub{display:grid;gap:10px;align-content:start;text-decoration:none;color:var(--ink)}
+.atlas-home .ah-cover{aspect-ratio:3/4;max-width:100%;border:1px solid var(--line);padding:14px;display:flex;flex-direction:column;justify-content:space-between;font-family:var(--f-display);font-weight:700;line-height:1.15;font-size:var(--s3);transition:transform .2s;overflow:hidden;overflow-wrap:anywhere;border-radius:0}
+.atlas-home .ah-pub:hover .ah-cover{transform:translateY(-3px)}
+.atlas-home .ah-c1{background:var(--g);color:#fff}.atlas-home .ah-c2{background:var(--sage);color:var(--ink)}
+.atlas-home .ah-c3{background:var(--o);color:#1D2620}.atlas-home .ah-c4{background:var(--b);color:#fff}
+.atlas-home .ah-cover .ah-mono{font-weight:400;opacity:.85;font-size:.75rem}
+.atlas-home .ah-cover .ah-org{font-family:var(--f-data);font-weight:400;font-size:.7rem;opacity:.8}
+.atlas-home .ah-pub .ah-kind{color:var(--g)}
+.atlas-home .ah-pub p{font-size:var(--s2);line-height:1.4}
+.atlas-home .ah-pub:hover p{color:var(--g)}
+.atlas-home .ah-depts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.atlas-home .ah-dept{background:#fff;padding:20px;display:grid;gap:10px;align-content:start;text-decoration:none;color:var(--ink)}
+.atlas-home .ah-dept:hover{background:var(--gt)}
+.atlas-home .ah-dept .ah-code{display:flex;justify-content:space-between;align-items:center}
+.atlas-home .ah-dept .ah-code i{width:10px;height:10px;border-radius:50%}
+.atlas-home .ah-dept h3{line-height:1.25}
+.atlas-home .ah-dept ul{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+.atlas-home .ah-dept li{font-size:var(--s1);color:var(--mut);line-height:1.35;padding-left:14px;position:relative}
+.atlas-home .ah-dept li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:1px;background:var(--mut)}
+.atlas-home .ah-grad{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:36px}
+.atlas-home .ah-grad-intro p{color:var(--mut);font-size:var(--s2);margin-top:10px}
+.atlas-home .ah-programs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.atlas-home .ah-prog{border-top:3px solid var(--g);background:#fff;padding:18px;display:grid;gap:8px;align-content:start;text-decoration:none;color:var(--ink)}
+.atlas-home .ah-prog:hover{background:var(--gt)}
+.atlas-home .ah-prog .ah-num{font-family:var(--f-display);font-weight:800;font-size:2.4rem;line-height:1;color:var(--g)}
+.atlas-home .ah-prog p{font-size:var(--s1);color:var(--mut)}
+.atlas-home .ah-councils{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.atlas-home .ah-council{display:flex;gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line)}
+.atlas-home .ah-council .ah-mono{color:var(--o);font-size:var(--s2);white-space:nowrap}
+.atlas-home .ah-mon{background:var(--sky-soft)}
+.atlas-home .ah-mon-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px;align-items:center}
+.atlas-home .ah-mon h2{color:var(--b)}
+.atlas-home .ah-mon p{color:var(--mut);margin-top:12px;font-size:var(--s2);max-width:54ch}
+.atlas-home .ah-bulletins{display:grid;margin-top:20px}
+.atlas-home .ah-bulletins a{display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px;padding:12px 0;border-top:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:var(--s2);line-height:1.4}
+.atlas-home .ah-bulletins a:hover{color:var(--b)}
+.atlas-home .ah-bulletins .ah-mono{color:var(--b)}
+.atlas-home .ah-journals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.atlas-home .ah-journal{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;background:#fff;border:1px solid var(--line);padding:20px;text-decoration:none;color:var(--ink)}
+.atlas-home .ah-journal:hover{border-color:var(--g)}
+.atlas-home .ah-spine{aspect-ratio:3/4;max-width:100%;display:flex;flex-direction:column;justify-content:space-between;padding:10px;font-family:var(--f-display);font-weight:700;font-size:var(--s2);line-height:1.15;overflow:hidden;overflow-wrap:anywhere}
+.atlas-home .ah-journal .ah-info{display:grid;gap:8px;align-content:start;min-width:0}
+.atlas-home .ah-journal h3{font-size:var(--s4)}
+.atlas-home .ah-journal p{font-size:var(--s2);color:var(--mut)}
+.atlas-home .ah-badge{justify-self:start;font-family:var(--f-data);font-size:.72rem;padding:2px 8px;border:1px solid var(--g);color:var(--g)}
+.atlas-home .ah-links{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.atlas-home .ah-links a{background:#fff;padding:16px;display:grid;gap:4px;text-decoration:none;color:var(--ink);font-size:var(--s2);font-weight:500;line-height:1.3}
+.atlas-home .ah-links a:hover{background:var(--gt);color:var(--g)}
+.atlas-home .ah-links a span{font-family:var(--f-data);font-size:.72rem;color:var(--mut);font-weight:400}
+.atlas-home .ah-pubs>*,.atlas-home .ah-depts>*,.atlas-home .ah-links>*,.atlas-home .ah-programs>*{min-width:0}
+@media(max-width:1499px){.atlas-home .ah-pubs{grid-template-columns:repeat(4,minmax(0,1fr))}.atlas-home .ah-pubs>:nth-child(n+5){display:none}}
+@media(max-width:999px){.atlas-home .ah-pubs{grid-template-columns:repeat(3,minmax(0,1fr))}.atlas-home .ah-pubs>:nth-child(n+4){display:none}}
+@media(max-width:960px){.atlas-home .ah-hero .w,.atlas-home .ah-news,.atlas-home .ah-grad,.atlas-home .ah-mon-grid{grid-template-columns:1fr}.atlas-home .ah-quick .w{grid-template-columns:repeat(2,minmax(0,1fr))}.atlas-home .ah-depts{grid-template-columns:repeat(2,minmax(0,1fr))}.atlas-home .ah-programs,.atlas-home .ah-journals{grid-template-columns:1fr}.atlas-home .ah-links{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:699px){.atlas-home .ah-pubs{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.atlas-home .ah-pubs>:nth-child(n+3){display:none}}
+@media(max-width:600px){.atlas-home .ah-quick .w,.atlas-home .ah-depts,.atlas-home .ah-councils{grid-template-columns:1fr}.atlas-home .ah-quick a{border-right:1px solid var(--line);border-top:1px solid var(--line)}.atlas-home .ah-links{grid-template-columns:repeat(2,minmax(0,1fr))}.atlas-home .ah-journal{grid-template-columns:84px minmax(0,1fr)}.atlas-home .ah-feed a,.atlas-home .ah-bulletins a{grid-template-columns:1fr;gap:2px}.atlas-home section{padding-block:40px}.atlas-home .ah-council{flex-wrap:wrap;gap:4px 16px}}
+.atlas-home .ah-spine{font-size:.75rem;hyphens:auto;overflow-wrap:break-word}
+@media(min-width:1000px){.atlas-home .ah-spine{font-size:.8rem}}
+.atlas-home .ah-journal .ah-more{white-space:normal}
+.atlas-home .ah-journal{min-width:0}.atlas-home .ah-journal h3,.atlas-home .ah-journal p{overflow-wrap:anywhere}
