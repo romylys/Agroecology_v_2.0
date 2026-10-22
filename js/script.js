@@ -250,10 +250,40 @@
     fit();
   }
 
+
+  function initRelief() {
+    var host = document.querySelector('#masthead'); if (!host || host.querySelector('canvas.relief')) return;
+    var c = document.createElement('canvas'); c.className = 'relief'; c.setAttribute('aria-hidden', 'true');
+    host.classList.add('hero-relief'); host.insertBefore(c, host.firstChild);
+    var ctx = c.getContext('2d'), t0 = 0, reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function f(x, y, t) { return Math.sin(x * .006 + t) * 1.1 + Math.sin(y * .009 - t * .6) * .9 + Math.sin((x + y) * .004 + 1.3) * 1.3 + Math.sin((x - y) * .007 + t * .4) * .6; }
+    function draw(t) {
+      var r = c.getBoundingClientRect(), d = window.devicePixelRatio || 1, W = r.width, H = r.height;
+      if (!W || !H) return;
+      if (c.width !== Math.round(W * d) || c.height !== Math.round(H * d)) { c.width = Math.round(W * d); c.height = Math.round(H * d); }
+      ctx.setTransform(d, 0, 0, d, 0, 0); ctx.clearRect(0, 0, W, H);
+      ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--contour').trim() || 'rgba(46,106,60,.2)';
+      ctx.lineWidth = 1; var s = 14, cols = Math.ceil(W / s) + 1, rows = Math.ceil(H / s) + 1, g = [], i, j;
+      for (j = 0; j < rows; j++) { g[j] = []; for (i = 0; i < cols; i++) g[j][i] = f(i * s, j * s, t); }
+      ctx.beginPath();
+      for (var L = -3.2; L <= 3.2; L += .4) {
+        for (j = 0; j < rows - 1; j++) for (i = 0; i < cols - 1; i++) {
+          var a = g[j][i], b = g[j][i + 1], cc = g[j + 1][i + 1], dd = g[j + 1][i], x = i * s, y = j * s, p = [];
+          var e = function (v1, v2, x1, y1, x2, y2) { if ((v1 < L) !== (v2 < L)) { var k = (L - v1) / (v2 - v1); p.push([x1 + (x2 - x1) * k, y1 + (y2 - y1) * k]); } };
+          e(a, b, x, y, x + s, y); e(b, cc, x + s, y, x + s, y + s); e(cc, dd, x + s, y + s, x, y + s); e(dd, a, x, y + s, x, y);
+          if (p.length >= 2) { ctx.moveTo(p[0][0], p[0][1]); ctx.lineTo(p[1][0], p[1][1]); if (p.length === 4) { ctx.moveTo(p[2][0], p[2][1]); ctx.lineTo(p[3][0], p[3][1]); } }
+        }
+      }
+      ctx.stroke();
+    }
+    draw(0); window.addEventListener('resize', function () { draw(t0); });
+    if (!reduce) { var last = 0; (function loop(ts) { if (ts - last > 150) { t0 = ts / 9000; draw(t0); last = ts; } requestAnimationFrame(loop); })(0); }
+  }
+
   function ready(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
   ready(function () {
     initNav(); initTabs(); initAccordion();
     $$('[data-filter]').forEach(initFilter);
-    initDocs(); initLang(); initForms(); initImages(); initFill();
+    initDocs(); initLang(); initForms(); initImages(); initRelief(); initFill();
   });
 })();
