@@ -832,3 +832,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 @media(min-width:1000px){.atlas-home .ah-spine{font-size:.8rem}}
 .atlas-home .ah-journal .ah-more{white-space:normal}
 .atlas-home .ah-journal{min-width:0}.atlas-home .ah-journal h3,.atlas-home .ah-journal p{overflow-wrap:anywhere}
+.atlas-home section.ah-ann{padding-block:20px;background:#fff}
+.atlas-home .ah-ann .alr{display:flex;align-items:center;gap:12px 16px;flex-wrap:wrap;margin:0;border:1px solid var(--line);border-left:3px solid var(--o);background:var(--ground);border-radius:0;padding:14px 18px}
+.atlas-home .ah-ann .alr .d{font-family:var(--f-data);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;padding:4px 10px;border-radius:0;white-space:nowrap}
+.atlas-home .ah-ann .alr b{font-family:var(--f-display);font-size:var(--s4);font-weight:700;flex:1 1 280px;min-width:0;overflow-wrap:anywhere;line-height:1.2}
+.atlas-home .ah-ann .alr .lk{font-family:var(--f-data);font-size:var(--s1);color:var(--g);white-space:nowrap}
