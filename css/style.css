@@ -837,3 +837,10 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .atlas-home .ah-ann .alr .d{font-family:var(--f-data);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;padding:4px 10px;border-radius:0;white-space:nowrap}
 .atlas-home .ah-ann .alr b{font-family:var(--f-display);font-size:var(--s4);font-weight:700;flex:1 1 280px;min-width:0;overflow-wrap:anywhere;line-height:1.2}
 .atlas-home .ah-ann .alr .lk{font-family:var(--f-data);font-size:var(--s1);color:var(--g);white-space:nowrap}
+.atlas-home section.ann-next{padding-block:36px;background:var(--ground)}
+.atlas-home .ann-next .h2{margin:0}
+.atlas-home .ann-next .ft,.atlas-home .ann-next .ft b,.atlas-home .ann-next .ft small{color:#fff}
+.atlas-home .ann-next .ev a,.atlas-home .ann-next .ev b{color:var(--ink)}
+.atlas-home .ann-next .ev a:hover b{color:var(--g)}
+.atlas-home .ann-next .lk{color:var(--g)}
+.atlas-home .ann-next .ft .d{color:var(--ink)}
