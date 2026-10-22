@@ -2,7 +2,7 @@
  * Agroeco 2.0 — script.js
  * Без залежностей. Прогресивне покращення: сторінки читаються й без JS.
  * Підключення у WordPress: wp_enqueue_script('agroeco', get_theme_file_uri('js/script.js'), [], '2.0.0', true);
- * Модулі: навігація · вкладки · акордеон · фільтри списків · нормативні документи · мова · форми · зображення
+ * Модулі: повні ряди карток · навігація · вкладки · акордеон · фільтри списків · нормативні документи · мова · форми · зображення
  */
 (function () {
   'use strict';
@@ -224,10 +224,34 @@
     });
   }
 
+
+  /* ---------- 9. Повні ряди карток: [data-fill] ----------
+     Стрічки карток (видання, новини) завжди заповнюють ряд: зайві картки в кінці ховаються
+     залежно від кількості колонок на поточній ширині. Не застосовувати до контенту, який не можна ховати. */
+  function initFill() {
+    var boxes = $$('[data-fill]');
+    if (!boxes.length) return;
+    function fit() {
+      boxes.forEach(function (g) {
+        var kids = $$(':scope > *', g);
+        kids.forEach(function (k) { k.removeAttribute('data-fill-hide'); });
+        g.style.gridTemplateColumns = '';
+        var cols = getComputedStyle(g).gridTemplateColumns.split(' ').length;
+        var vis = kids.filter(function (k) { return getComputedStyle(k).display !== 'none' && !k.hidden; });
+        if (vis.length && vis.length <= cols) { g.style.gridTemplateColumns = 'repeat(' + vis.length + ', minmax(0, 1fr))'; return; }
+        if (cols < 2) return;
+        var keep = Math.floor(vis.length / cols) * cols;
+        vis.slice(keep).forEach(function (k) { k.setAttribute('data-fill-hide', ''); });
+      });
+    }
+    var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(fit, 80); });
+    fit();
+  }
+
   function ready(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
   ready(function () {
     initNav(); initTabs(); initAccordion();
     $$('[data-filter]').forEach(initFilter);
-    initDocs(); initLang(); initForms(); initImages();
+    initDocs(); initLang(); initForms(); initImages(); initFill();
   });
 })();
