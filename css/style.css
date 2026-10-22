@@ -558,7 +558,7 @@ option{background:#fff;color:var(--ink)}
 .nm-documents .doc{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
 .nm-contacts p,.nm-related .nl{margin:6px 0 0;color:var(--mut)}.nm-related .nl a{display:block;padding:8px 0;border-bottom:1px solid var(--line)}
 .evbar{display:flex;gap:20px;align-items:center;background:var(--gt);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin:14px 0 8px;flex-wrap:wrap}
-.evd{background:var(--b);color:#fff;border-radius:8px;padding:10px 16px;text-align:center;min-width:84px}.evd b{display:block;font-size:24px;line-height:1.1}.evd span{font-size:12px;text-transform:uppercase}
+.evbar .evd{background:var(--b);color:#fff;border-radius:8px;padding:10px 16px;text-align:center;min-width:84px;width:auto}.evbar .evd b{display:block;font-size:24px;line-height:1.1;white-space:nowrap}.evbar .evd span{font-size:12px;text-transform:uppercase;white-space:nowrap}
 .evf{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;flex:1;min-width:220px}.evf>div{min-width:0}.evf b,.evbar b{white-space:normal;overflow-wrap:anywhere;word-break:break-word}.evbar{max-width:100%}.evf small{color:var(--mut);display:block;font-size:12px}
 .ntl{list-style:none;padding:0;margin:0;border-left:3px solid var(--g)}.ntl li{display:flex;gap:16px;padding:0 0 18px 20px;position:relative}.ntl li::before{content:"";position:absolute;left:-10px;top:4px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--g)}
 .ntd{flex:none;min-width:72px;font-weight:700;color:var(--gd)}.ntl p{margin:2px 0 0;color:var(--mut)}
@@ -660,3 +660,9 @@ h1{overflow-wrap:anywhere}
 
 /* повні ряди карток: див. js/script.js, [data-fill] */
 [data-fill-hide]{display:none!important}
+
+/* «Найближчі події» на головній: дата-бейдж не переноситься на кілька рядків */
+.ev .evd{flex:none;width:68px;padding:6px 4px;white-space:nowrap;line-height:1.2}
+.ev .evd b{font-size:clamp(13px,.7vw + 5px,15px);white-space:nowrap}
+.ev .evd span{display:block;font-size:clamp(11px,.5vw + 6px,12px);white-space:nowrap}
+.ev>div:last-child{min-width:0;flex:1;overflow-wrap:anywhere}
