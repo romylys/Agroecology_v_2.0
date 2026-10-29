@@ -283,10 +283,30 @@
     if (!reduce) { var last = 0; (function loop(ts) { if (ts - last > 150) { t0 = ts / 9000; draw(t0); last = ts; } requestAnimationFrame(loop); })(0); }
   }
 
+  function initV4() {
+    var head = document.getElementById('v4-head'); if (!head) return;
+    var b = document.getElementById('v4-burger');
+    b.addEventListener('click', function () { var o = head.classList.toggle('is-open'); b.setAttribute('aria-expanded', o); b.textContent = o ? 'Закрити' : 'Меню'; });
+    $$('.v4-menu>li.menu-item-has-children>a').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        if (!window.matchMedia('(max-width:1080px)').matches) return;
+        var li = a.parentNode; if (!li.classList.contains('is-open')) { e.preventDefault(); $$('.v4-menu>li.is-open').forEach(function (x) { x.classList.remove('is-open'); }); li.classList.add('is-open'); }
+      });
+    });
+    document.addEventListener('click', function (e) { if (!e.target.closest('.v4-menu')) $$('.v4-menu>li.is-open').forEach(function (x) { x.classList.remove('is-open'); }); });
+    var tb = document.getElementById('v4-theme'), root = document.documentElement;
+    function paint() { var d = root.getAttribute('data-theme') === 'dark'; tb.setAttribute('aria-pressed', d); tb.querySelector('span').textContent = d ? 'Світла тема' : 'Темна тема'; }
+    tb.addEventListener('click', function () {
+      var d = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; root.setAttribute('data-theme', d);
+      try { localStorage.setItem('agroeco-theme', d); } catch (e) {} paint();
+    });
+    paint();
+  }
+
   function ready(fn) { if (document.readyState !== 'loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
   ready(function () {
     initNav(); initTabs(); initAccordion();
     $$('[data-filter]').forEach(initFilter);
-    initDocs(); initLang(); initForms(); initImages(); initRelief(); initFill();
+    initDocs(); initLang(); initForms(); initImages(); initRelief(); initV4(); initFill();
   });
 })();
