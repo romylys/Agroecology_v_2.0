@@ -689,6 +689,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 /* верхня смуга */
 .top{background:var(--gt);font-family:var(--f-data);font-size:12px;letter-spacing:.02em}
 .top a:hover{color:var(--g);text-decoration:underline}
+.top .lg a:hover,.top .lg a.on:hover{color:#fff;background:var(--g);text-decoration:none}
 /* шапка */
 .site-header{background:#fff;border-bottom:1px solid var(--line)}
 .hd .w{padding-top:12px;padding-bottom:12px}
