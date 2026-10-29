@@ -845,6 +845,10 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .atlas-home .ann-next .ev a:hover b{color:var(--g)}
 .atlas-home .ann-next .lk{color:var(--g)}
 .atlas-home .ann-next .ft .d{color:var(--ink)}
+.atlas-home a.ah-council{color:var(--ink);text-decoration:none;transition:background .15s}
+.atlas-home a.ah-council:hover{background:var(--gt)}
+.atlas-home a.ah-council:hover span:last-child{color:var(--g);text-decoration:underline;text-underline-offset:3px}
+.atlas-home a.ah-council:focus-visible{outline:2px solid var(--o);outline-offset:2px}
 
 /* ===== 7. Головна, варіант 4: шапка й меню зі світлої теми «Польовий атлас» + перемикач темної теми ===== */
 html[data-theme="dark"]{color-scheme:dark;--ground:#121815;--surface:#19211D;--ink:#E3EAE3;--mut:#A3B2A7;--line:#2C3832;--g:#7CC08A;--gd:#5FA46E;--gt:#1F3125;--o:#D9A64A;--b:#78B6CB;--sky-soft:#1B2C33;--sage:#25332B;--contour:rgba(124,192,138,.16)}
