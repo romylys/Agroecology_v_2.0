@@ -849,6 +849,12 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .atlas-home a.ah-council:hover{background:var(--gt)}
 .atlas-home a.ah-council:hover span:last-child{color:var(--g);text-decoration:underline;text-underline-offset:3px}
 .atlas-home a.ah-council:focus-visible{outline:2px solid var(--o);outline-offset:2px}
+.atlas-home .ah-btn{transition:background .18s,color .18s,border-color .18s,transform .18s,box-shadow .18s}
+.atlas-home .ah-btn.ah-solid:hover{background:var(--gd);border-color:var(--gd);transform:translateY(-2px);box-shadow:0 6px 14px rgba(31,77,43,.25)}
+.atlas-home .ah-btn.ah-ghost:hover{background:var(--g);color:#fff;border-color:var(--g);transform:translateY(-2px);box-shadow:0 6px 14px rgba(31,77,43,.25)}
+.atlas-home .ah-btn:active{transform:translateY(0);box-shadow:none}
+.atlas-home .ah-btn:focus-visible{outline:2px solid var(--o);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.atlas-home .ah-btn:hover{transform:none}}
 
 /* ===== 7. Головна, варіант 4: шапка й меню зі світлої теми «Польовий атлас» + перемикач темної теми ===== */
 html[data-theme="dark"]{color-scheme:dark;--ground:#121815;--surface:#19211D;--ink:#E3EAE3;--mut:#A3B2A7;--line:#2C3832;--g:#7CC08A;--gd:#5FA46E;--gt:#1F3125;--o:#D9A64A;--b:#78B6CB;--sky-soft:#1B2C33;--sage:#25332B;--contour:rgba(124,192,138,.16)}
@@ -913,3 +919,5 @@ html[data-theme="dark"] .variant-switch a.on{background:#7CC08A!important;color:
 .v4-foot .v4-copy{grid-column:1/-1;border-top:1px solid var(--line);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;color:var(--mut)}
 @media(max-width:960px){.v4-foot .v4-wrap{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.v4-foot .v4-wrap{grid-template-columns:1fr}}
+html[data-theme="dark"] .home-v4 .ah-btn.ah-ghost:hover{color:#121815}
+html[data-theme="dark"] .home-v4 .ah-btn.ah-solid:hover{color:#121815}
